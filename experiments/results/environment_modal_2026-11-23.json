@@ -1,0 +1,21 @@
+{
+  "recorded": "2026-11-23",
+  "platform": "Modal",
+  "python": "3.12.16",
+  "torch": "2.9.0+cu129",
+  "torch_cuda_build": "12.9",
+  "cuda_available": true,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "gpu_memory_gb": 85.1,
+  "driver": "620.70.06",
+  "kalypso_commit": "a77c625f88ef878825e9c3f43df13ca809433ecf",
+  "vllm_base_commit": "55f1fc1b1b4044e5b5055c968cf6d956a865476f",
+  "vllm": "0.13.0rc4",
+  "vllm_location": "/root/kalypso/vllm",
+  "vllm_C_loaded": true,
+  "kalypso_module_loaded": true,
+  "transformers": "4.57.6",
+  "flashinfer-python": "0.5.3",
+  "xformers": null,
+  "triton": "3.5.0"
+}

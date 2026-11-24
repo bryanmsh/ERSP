@@ -1,0 +1,143 @@
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:20:58 [api_server.py:1560] vLLM API server version 0.13.0rc4
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:20:58 [utils.py:253] non-default args: {'model_tag': 'meta-llama/Llama-3.1-8B-Instruct', 'port': 8003, 'enable_prompt_tokens_details': True, 'model': 'meta-llama/Llama-3.1-8B-Instruct', 'max_model_len': 32768, 'enable_prefix_caching': True, 'kv_cache_metrics': True, 'kv_cache_metrics_sample': 1.0}
+[0;36m(APIServer pid=6)[0;0m WARNING 11-24 05:20:58 [arg_utils.py:1181] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:21:09 [model.py:514] Resolved architecture: LlamaForCausalLM
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:21:09 [model.py:1661] Using max model len 32768
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:21:10 [scheduler.py:230] Chunked prefill is enabled with max_num_batched_tokens=2048.
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:22 [core.py:93] Initializing a V1 LLM engine (v0.13.0rc4) with config: model='meta-llama/Llama-3.1-8B-Instruct', speculative_config=None, tokenizer='meta-llama/Llama-3.1-8B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=True, kv_cache_metrics_sample=1.0, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False), seed=0, served_model_name=meta-llama/Llama-3.1-8B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False}, 'local_cache_dir': None}
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:23 [parallel_state.py:1203] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.20.11.104:63403 backend=nccl
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:23 [parallel_state.py:1411] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:24 [gpu_model_runner.py:3562] Starting to load model meta-llama/Llama-3.1-8B-Instruct...
+[0;36m(EngineCore_DP0 pid=122)[0;0m /usr/local/lib/python3.12/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:194: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+[0;36m(EngineCore_DP0 pid=122)[0;0m We recommend installing via `pip install torch-c-dlpack-ext`
+[0;36m(EngineCore_DP0 pid=122)[0;0m   warnings.warn(
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:27 [cuda.py:351] Using FLASH_ATTN attention backend out of potential backends: ('FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION')
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02<00:08,  2.74s/it]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05<00:05,  2.87s/it]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08<00:02,  2.84s/it]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09<00:00,  2.03s/it]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09<00:00,  2.32s/it]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:38 [default_loader.py:308] Loading weights took 9.33 seconds
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:39 [gpu_model_runner.py:3659] Model loading took 14.9889 GiB memory and 14.095846 seconds
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:46 [backends.py:643] Using cache directory: /root/.cache/vllm/torch_compile_cache/478738a8b3/rank_0_0/backbone for vLLM's torch.compile
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:21:46 [backends.py:703] Dynamo bytecode transform time: 6.97 s
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:03 [backends.py:261] Cache the graph of compile range (1, 2048) for later use
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:08 [backends.py:278] Compiling a graph for compile range (1, 2048) takes 9.07 s
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:08 [monitor.py:34] torch.compile takes 16.05 s in total
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:09 [gpu_worker.py:375] Available KV cache memory: 55.13 GiB
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:09 [kv_cache_utils.py:1292] GPU KV cache size: 451,616 tokens
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:09 [kv_cache_utils.py:1297] Maximum concurrency for 32,768 tokens per request: 13.78x
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:04, 10.76it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:04, 11.00it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:03, 11.44it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:03, 11.47it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|█▉        | 10/51 [00:00<00:03, 11.40it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:01<00:03, 11.02it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:01<00:03, 10.90it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 16/51 [00:01<00:03, 11.03it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:01<00:02, 11.17it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:01<00:02, 11.25it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  43%|████▎     | 22/51 [00:01<00:02, 11.03it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:02<00:02, 11.03it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 26/51 [00:02<00:02, 11.13it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 28/51 [00:02<00:02, 11.01it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:02<00:01, 10.66it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:02<00:01, 10.91it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 34/51 [00:03<00:01, 10.67it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:03<00:01, 10.80it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 38/51 [00:03<00:01, 11.07it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 40/51 [00:03<00:00, 11.24it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:03<00:00, 11.49it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 44/51 [00:03<00:00, 11.61it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  90%|█████████ | 46/51 [00:04<00:00, 11.62it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:04<00:00, 11.65it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  98%|█████████▊| 50/51 [00:04<00:00, 11.78it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:04<00:00, 11.19it/s]
+[0;36m(EngineCore_DP0 pid=122)[0;0m 
+Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]
+Capturing CUDA graphs (decode, FULL):   3%|▎         | 1/35 [00:00<00:04,  6.93it/s]
+Capturing CUDA graphs (decode, FULL):   9%|▊         | 3/35 [00:00<00:03,  9.75it/s]
+Capturing CUDA graphs (decode, FULL):  14%|█▍        | 5/35 [00:00<00:02, 10.06it/s]
+Capturing CUDA graphs (decode, FULL):  20%|██        | 7/35 [00:00<00:02, 10.36it/s]
+Capturing CUDA graphs (decode, FULL):  26%|██▌       | 9/35 [00:00<00:02, 10.81it/s]
+Capturing CUDA graphs (decode, FULL):  31%|███▏      | 11/35 [00:01<00:02, 10.83it/s]
+Capturing CUDA graphs (decode, FULL):  37%|███▋      | 13/35 [00:01<00:02, 10.88it/s]
+Capturing CUDA graphs (decode, FULL):  43%|████▎     | 15/35 [00:01<00:01, 10.98it/s]
+Capturing CUDA graphs (decode, FULL):  49%|████▊     | 17/35 [00:01<00:01, 10.77it/s]
+Capturing CUDA graphs (decode, FULL):  54%|█████▍    | 19/35 [00:01<00:01, 10.42it/s]
+Capturing CUDA graphs (decode, FULL):  60%|██████    | 21/35 [00:02<00:01, 10.28it/s]
+Capturing CUDA graphs (decode, FULL):  66%|██████▌   | 23/35 [00:02<00:01, 10.26it/s]
+Capturing CUDA graphs (decode, FULL):  71%|███████▏  | 25/35 [00:02<00:00, 10.28it/s]
+Capturing CUDA graphs (decode, FULL):  77%|███████▋  | 27/35 [00:02<00:00, 10.42it/s]
+Capturing CUDA graphs (decode, FULL):  83%|████████▎ | 29/35 [00:02<00:00, 10.46it/s]
+Capturing CUDA graphs (decode, FULL):  89%|████████▊ | 31/35 [00:02<00:00, 10.62it/s]
+Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 33/35 [00:03<00:00, 10.70it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:03<00:00, 10.62it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:03<00:00, 10.49it/s]
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:18 [gpu_model_runner.py:4587] Graph capturing finished in 9 secs, took 0.50 GiB
+[0;36m(EngineCore_DP0 pid=122)[0;0m INFO 11-24 05:22:18 [core.py:261] init engine (profile, create kv cache, warmup model) took 39.67 seconds
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:21 [api_server.py:1281] Supported tasks: ['generate']
+[0;36m(APIServer pid=6)[0;0m WARNING 11-24 05:22:21 [model.py:1487] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:21 [serving_responses.py:201] Using default chat sampling params from model: {'temperature': 0.6, 'top_p': 0.9}
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:21 [serving_chat.py:137] Using default chat sampling params from model: {'temperature': 0.6, 'top_p': 0.9}
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:22 [serving_completion.py:77] Using default completion sampling params from model: {'temperature': 0.6, 'top_p': 0.9}
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:22 [serving_chat.py:137] Using default chat sampling params from model: {'temperature': 0.6, 'top_p': 0.9}
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:22 [api_server.py:1492] Starting Semantic Query processor
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:22 [api_server.py:1505] Semantic Query processor KV budget: per_gpu=55.13 GiB tp_size=1 total=55.13 GiB
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [api_server.py:1634] Starting vLLM API server 0 on http://0.0.0.0:8003
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [launcher.py:38] Available routes are:
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:23 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(APIServer pid=6)[0;0m INFO:     Started server process [6]
+[0;36m(APIServer pid=6)[0;0m INFO:     Waiting for application startup.
+[0;36m(APIServer pid=6)[0;0m INFO:     Application startup complete.
+[0;36m(APIServer pid=6)[0;0m INFO:     127.0.0.1:40115 - "GET /v1/semantic/healthz HTTP/1.1" 200 OK
+[0;36m(APIServer pid=6)[0;0m === Semantic Execute Request ===
+[0;36m(APIServer pid=6)[0;0m Query:
+[0;36m(APIServer pid=6)[0;0m [{'op': 'sem_filter', 'args': {'prompt': "The context is one sentence from a restaurant review. Answer TRUE if the sentence talks about the restaurant's service, such as the staff, waiters, hosts, wait times, or how customers were treated. Answer FALSE if it does not."}}, {'op': 'sem_map', 'args': {'prompt': "What sentiment does this sentence express about the restaurant's service? Answer with exactly one word: positive, negative, neutral, or conflict (conflict means both positive and negative)."}}]
+[0;36m(APIServer pid=6)[0;0m data_path:
+[0;36m(APIServer pid=6)[0;0m /root/experiments/data/semeval2014_restaurants_train_sample200_seed42.csv
+[0;36m(APIServer pid=6)[0;0m ================================
+[0;36m(APIServer pid=6)[0;0m query called
+[0;36m(APIServer pid=6)[0;0m [1] PIPELINE
+[0;36m(APIServer pid=6)[0;0m   (1) STAGE stage_id=1 behavior=TUPLE_INDEPENDENT ops=['SemFilter', 'SemMap'] fanout=None
+[0;36m(APIServer pid=6)[0;0m [sched] 05:22:29 start task=100 stage=1
+[0;36m(APIServer pid=6)[0;0m stage   used/cap GB  wait   run defer GB
+[0;36m(APIServer pid=6)[0;0m     1     0.0/59.2    199     1      0.0
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:32 [chat_utils.py:590] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(APIServer pid=6)[0;0m [sched] 05:22:33 finish task=100 stage=1
+[0;36m(APIServer pid=6)[0;0m stage   used/cap GB  wait   run defer GB
+[0;36m(APIServer pid=6)[0;0m     1     5.5/59.2      0   199      0.0
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:34 [loggers.py:248] Engine 000: Avg prompt throughput: 3114.5 tokens/s, Avg generation throughput: 90.3 tokens/s, Running: 97 reqs, Waiting: 28 reqs, GPU KV cache usage: 3.3%, Prefix cache hit rate: 30.6%
+[0;36m(APIServer pid=6)[0;0m [sched] 05:22:34 finish task=209 stage=1
+[0;36m(APIServer pid=6)[0;0m stage   used/cap GB  wait   run defer GB
+[0;36m(APIServer pid=6)[0;0m     1     3.6/59.2      0   129      0.0
+[0;36m(APIServer pid=6)[0;0m [sched] 05:22:35 finish task=299 stage=1
+[0;36m(APIServer pid=6)[0;0m stage   used/cap GB  wait   run defer GB
+[0;36m(APIServer pid=6)[0;0m     1     0.6/59.2      0    20      0.0
+[0;36m(APIServer pid=6)[0;0m [sem-map] retry-trigger stage=1 position=1 request_id=chatcmpl-a21545dfa921846d pin_req_id=None from_max_tokens=93 to_max_tokens=8192 input_tokens=93
+[0;36m(APIServer pid=6)[0;0m [sched] 05:22:37 finish task=348 stage=1
+[0;36m(APIServer pid=6)[0;0m stage   used/cap GB  wait   run defer GB
+[0;36m(APIServer pid=6)[0;0m     1     0.0/59.2      0     0      0.0
+[0;36m(APIServer pid=6)[0;0m len(out)51
+[0;36m(APIServer pid=6)[0;0m [QueryProcessor] QUERY_KV_STATS {"decode_time_seconds": 201.32145301199955, "decode_tokens": 3578, "elapsed_seconds": 7.881731907999992, "inference_time_seconds": 235.79278110799967, "kv_blocks_evicted": 0, "kv_eviction_metric_available": true, "llm_work_metrics_available": true, "preemptions": 0, "prefill_time_seconds": 34.471328095999866, "prefill_tokens_computed": 33543, "prefix_hit_fraction": 0.3469932057546674, "prefix_tokens_computed_on_miss": 33543, "prefix_tokens_queried": 51367, "prefix_tokens_reused": 17824, "prompt_tokens": 51367, "query_id": "query-869ad8611f8d4d1e902a7b13ed27e7b1", "scope": "process_delta"}
+[0;36m(APIServer pid=6)[0;0m [QueryProcessor] OP_TOKEN_STATS {"s1.0:SemFilter": {"cached_tokens": 12736, "calls": 200, "generated_tokens": 1600, "materialized_tokens": 30480, "prompt_tokens": 41616}, "s1.1:SemMap": {"cached_tokens": 5088, "calls": 52, "generated_tokens": 1978, "materialized_tokens": 6641, "prompt_tokens": 9751}}
+[0;36m(APIServer pid=6)[0;0m INFO:     127.0.0.1:39392 - "POST /v1/semantic/query HTTP/1.1" 200 OK
+[0;36m(APIServer pid=6)[0;0m INFO 11-24 05:22:39 [launcher.py:110] Shutting down FastAPI HTTP server.
+[rank0]:[W1124 05:22:39.120806376 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[0;36m(APIServer pid=6)[0;0m INFO:     Shutting down
+[0;36m(APIServer pid=6)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(APIServer pid=6)[0;0m INFO:     Application shutdown complete.
