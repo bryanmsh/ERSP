@@ -1,0 +1,22 @@
+# Datasets are rebuilt with experiments/scripts/prepare_semeval_sample.py
+experiments/data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets and credentials
+.env
+.modal.toml
+hf_token*
+
+# Model weights
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Model outputs that contain SemEval sentences
+experiments/results/runs/*/client_output.json

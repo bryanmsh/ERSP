@@ -1,0 +1,43 @@
+{
+  "data_path": "/root/experiments/data/semeval2014_restaurants_train_sample200_seed42.csv",
+  "ops": [
+    {
+      "op": "sem_filter",
+      "args": {
+        "prompt": "The context is one sentence from a restaurant review. Answer TRUE if the sentence talks about the restaurant's service, such as the staff, waiters, hosts, wait times, or how customers were treated. Answer FALSE if it does not."
+      }
+    },
+    {
+      "op": "sem_map",
+      "args": {
+        "prompt": "What sentiment does this sentence express about the restaurant's service? Answer with exactly one word: positive, negative, neutral, or conflict (conflict means both positive and negative)."
+      }
+    }
+  ],
+  "blocking": false,
+  "model_name": "meta-llama/Llama-3.1-8B-Instruct"
+}
+
+Request time: 6.686s (server says 6.679s)
+{
+  "input_rows": 200,
+  "rows_passed_filter": 51,
+  "selectivity_observed": 0.255,
+  "selectivity_ground_truth": 0.235,
+  "filter_confusion": {
+    "tp": 40,
+    "fp": 11,
+    "fn": 7,
+    "tn": 142
+  },
+  "filter_accuracy": 0.91,
+  "filter_precision": 0.7843137254901961,
+  "filter_recall": 0.851063829787234,
+  "map_rows_scored": 40,
+  "map_polarity_accuracy": 0.8,
+  "map_predicted_labels": {
+    "negative": 13,
+    "positive": 24,
+    "neutral": 3
+  }
+}

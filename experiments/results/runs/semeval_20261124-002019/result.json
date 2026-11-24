@@ -1,0 +1,91 @@
+{
+  "run_utc": "2026-11-24T05:20:18+00:00",
+  "workload": "semeval_service_filter_map",
+  "dataset": "SemEval-2014 Task 4 restaurants: semeval2014_restaurants_train_sample200_seed42.csv",
+  "input_rows": 200,
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "server_args": [
+    "--port",
+    "8003",
+    "--gpu-memory-utilization",
+    "0.9",
+    "--enable-prefix-caching",
+    "--max-model-len",
+    "32768",
+    "--enable-prompt-tokens-details",
+    "--kv-cache-metrics",
+    "--kv-cache-metrics-sample",
+    "1.0"
+  ],
+  "kalypso_commit": "a77c625f88ef878825e9c3f43df13ca809433ecf",
+  "server_latency_sec": 6.679,
+  "throughput_rows_per_sec": 29.944602485402005,
+  "scores": {
+    "input_rows": 200,
+    "rows_passed_filter": 51,
+    "selectivity_observed": 0.255,
+    "selectivity_ground_truth": 0.235,
+    "filter_confusion": {
+      "tp": 40,
+      "fp": 11,
+      "fn": 7,
+      "tn": 142
+    },
+    "filter_accuracy": 0.91,
+    "filter_precision": 0.7843137254901961,
+    "filter_recall": 0.851063829787234,
+    "map_rows_scored": 40,
+    "map_polarity_accuracy": 0.8,
+    "map_predicted_labels": {
+      "negative": 13,
+      "positive": 24,
+      "neutral": 3
+    }
+  },
+  "server_startup_seconds": 75.1,
+  "client_wall_seconds": 6.854,
+  "client_returncode": 0,
+  "query_kv_stats": [
+    {
+      "decode_time_seconds": 187.38798779000058,
+      "decode_tokens": 3578,
+      "elapsed_seconds": 6.678064656000004,
+      "inference_time_seconds": 219.2850559310001,
+      "kv_blocks_evicted": 0,
+      "kv_eviction_metric_available": true,
+      "llm_work_metrics_available": true,
+      "preemptions": 0,
+      "prefill_time_seconds": 31.897068140999608,
+      "prefill_tokens_computed": 33543,
+      "prefix_hit_fraction": 0.3469932057546674,
+      "prefix_tokens_computed_on_miss": 33543,
+      "prefix_tokens_queried": 51367,
+      "prefix_tokens_reused": 17824,
+      "prompt_tokens": 51367,
+      "query_id": "query-e2e1211082da49b1b3ce8cbd900e8c3e",
+      "scope": "process_delta"
+    }
+  ],
+  "op_token_stats": [
+    {
+      "s1.0:SemFilter": {
+        "cached_tokens": 12736,
+        "calls": 200,
+        "generated_tokens": 1600,
+        "materialized_tokens": 30480,
+        "prompt_tokens": 41616
+      },
+      "s1.1:SemMap": {
+        "cached_tokens": 5088,
+        "calls": 52,
+        "generated_tokens": 1978,
+        "materialized_tokens": 6641,
+        "prompt_tokens": 9751
+      }
+    }
+  ],
+  "peak_gpu_memory_mib": {
+    "startup": 74187,
+    "workload": 74191
+  }
+}
